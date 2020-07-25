@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgb(253, 253, 253);
+  transition: background 0.5s ease;
+}
+
+p {
+  font-family: sans-serif;
+  max-width: 30rem;
+  margin: 1rem;
+  font-size: 17px;
+  padding: 2rem;
+  border-radius: 60px 0px 60px 0px;
+  border: 2px solid rgb(209, 209, 209);
+  transition: background 0.5s ease, color 0.5s ease, border 0.5s ease;
+}
+
+.theme-toggle {
+  background: rgba(0, 93, 93, 0.5);
+  height: 3rem;
+  width: 3rem;
+  border-radius: 50%;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.5s ease;
+  overflow: hidden;
+}
+
+.theme-toggle:hover,
+.theme-toggle:focus {
+  transform: scale(1.1);
+}
+
+.theme-toggle i {
+  font-size: 2rem;
+  position: absolute;
+  transition: opacity 0.5s ease, transform 0.5s ease, color 0.5s ease;
+}
+
+.fa-moon {
+  color: rgb(251, 178, 6);
+  transform: translateX(0px);
+}
+
+.fa-sun {
+  color: rgb(255, 72, 0);
+  opacity: 0;
+  transform: translateX(50px);
+}
+
+.checkbox {
+  display: none;
+}
+
+.checkbox:checked ~ .theme-toggle .fa-sun {
+  opacity: 1;
+  transform: translateX(0px);
+}
+
+.checkbox:checked ~ .theme-toggle .fa-moon {
+  opacity: 0;
+  transform: translateX(-50px);
+}
+
+/* Dark theme */
+
+.container.dark {
+  background: rgb(0, 17, 29);
+  color: #fafafa;
+}
+
+.container.dark p {
+  border: 2px solid rgb(98, 98, 98);
+}
