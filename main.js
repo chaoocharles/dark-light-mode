@@ -1,3 +1,3 @@
 document.querySelector("#checkbox").addEventListener("change", () => {
-  document.querySelector(".container").classList.toggle("dark");
-});
+    document.querySelector(".container").classList.toggle("dark")
+})

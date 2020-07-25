@@ -5,55 +5,50 @@
 }
 
 .container {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background: rgb(253, 253, 253);
+  background: rgb(250, 250, 250);
   transition: background 0.5s ease;
 }
 
 p {
   font-family: sans-serif;
-  max-width: 30rem;
-  margin: 1rem;
   font-size: 17px;
-  padding: 2rem;
-  border-radius: 60px 0px 60px 0px;
+  max-width: 30rem;
   border: 2px solid rgb(209, 209, 209);
-  transition: background 0.5s ease, color 0.5s ease, border 0.5s ease;
+  border-radius: 60px 0px;
+  padding: 2rem;
+  margin: 1rem;
+  transition: color 0.5s ease, border 0.5s ease;
 }
 
-.theme-toggle {
+.toggle-theme {
   background: rgba(0, 93, 93, 0.5);
   height: 3rem;
   width: 3rem;
-  border-radius: 50%;
   padding: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
+  border-radius: 50%;
   position: relative;
-  cursor: pointer;
-  transition: transform 0.5s ease;
   overflow: hidden;
+  transition: transform 0.5s ease;
 }
 
-.theme-toggle:hover,
-.theme-toggle:focus {
+.toggle-theme:hover,
+.togge-theme:focus {
+  cursor: pointer;
   transform: scale(1.1);
 }
 
-.theme-toggle i {
+.toggle-theme i {
   font-size: 2rem;
   position: absolute;
-  transition: opacity 0.5s ease, transform 0.5s ease, color 0.5s ease;
-}
-
-.fa-moon {
-  color: rgb(251, 178, 6);
-  transform: translateX(0px);
+  transition: transform 0.5s ease, opacity 0.5s ease, color 0.5s ease;
 }
 
 .fa-sun {
@@ -62,27 +57,32 @@ p {
   transform: translateX(50px);
 }
 
+.fa-moon {
+  color: rgb(251, 178, 6);
+  transform: translateX(0px);
+}
+
 .checkbox {
   display: none;
 }
 
-.checkbox:checked ~ .theme-toggle .fa-sun {
-  opacity: 1;
-  transform: translateX(0px);
+.checkbox:checked ~ .toggle-theme .fa-sun{
+    opacity: 1;
+    transform: translateX(0px);
 }
 
-.checkbox:checked ~ .theme-toggle .fa-moon {
-  opacity: 0;
-  transform: translateX(-50px);
+.checkbox:checked ~ .toggle-theme .fa-moon{
+    opacity: 0;
+    transform: translateX(-50px);
 }
 
-/* Dark theme */
+/* Dark Theme */
 
-.container.dark {
-  background: rgb(0, 17, 29);
-  color: #fafafa;
+.container.dark{
+    background: rgb(0, 17, 29);
+    color: #fafafa;
 }
 
-.container.dark p {
-  border: 2px solid rgb(98, 98, 98);
+.container.dark p{
+    border: 2px solid rgb(98,98,98);
 }
